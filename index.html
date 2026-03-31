@@ -25,7 +25,6 @@
   --accent2: #34d399;
   --accent-dim: rgba(110,231,183,0.12);
   --accent-dim2: rgba(110,231,183,0.06);
-  --red: #f87171;
   --radius: 10px;
   --radius-lg: 16px;
 }
@@ -39,16 +38,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-
-/* Layout */
 .page-wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
-
-/* Header */
-.site-header {
-  padding: 48px 0 40px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 48px;
-}
+.site-header { padding: 48px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
 .badge {
   display: inline-flex; align-items: center; gap: 6px;
   background: var(--accent-dim2); border: 1px solid rgba(110,231,183,0.2);
@@ -61,270 +52,113 @@ body {
 .site-header h1 {
   font-family: 'Syne', sans-serif;
   font-size: clamp(26px, 5vw, 38px);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  font-weight: 700; color: #fff;
+  line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 12px;
 }
 .site-header h1 span { color: var(--accent); }
-.site-header p {
-  font-size: 15px;
-  color: var(--text2);
-  max-width: 520px;
-  line-height: 1.65;
-}
-.tools-row {
-  display: flex; align-items: center; gap: 10px;
-  margin-top: 20px; flex-wrap: wrap;
-}
+.site-header p { font-size: 15px; color: var(--text2); max-width: 520px; line-height: 1.65; }
+.tools-row { display: flex; align-items: center; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
 .tool-tag {
   display: flex; align-items: center; gap: 6px;
   background: var(--bg3); border: 1px solid var(--border2);
-  color: var(--text2); font-size: 12px;
-  padding: 5px 12px; border-radius: 99px;
+  color: var(--text2); font-size: 12px; padding: 5px 12px; border-radius: 99px;
 }
 .tool-tag strong { color: var(--text); font-weight: 500; }
 .tool-sep { color: var(--text3); font-size: 12px; }
-
-/* Section titles */
 .section-label {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 14px;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
   display: flex; align-items: center; gap: 8px;
 }
-.section-label::after {
-  content: '';
-  flex: 1; height: 1px;
-  background: var(--border);
-}
-
-/* Cards / panels */
-.panel {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  margin-bottom: 16px;
-}
-
-/* Grid */
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.panel { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 16px; }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
-@media (max-width: 600px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
-
-/* Fields */
+@media (max-width: 600px) { .grid2 { grid-template-columns: 1fr; } }
 .field { display: flex; flex-direction: column; gap: 6px; }
-.field label {
-  font-size: 12px;
-  color: var(--text2);
-  font-weight: 400;
-  letter-spacing: 0.01em;
+.field label { font-size: 12px; color: var(--text2); font-weight: 400; letter-spacing: 0.01em; }
+.field input, .field select, .field textarea {
+  width: 100%; background: var(--bg); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 10px 14px; font-size: 14px;
+  color: var(--text); font-family: 'DM Sans', sans-serif; transition: border-color 0.2s; outline: none; -webkit-appearance: none;
 }
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  background: var(--bg);
-  border: 1px solid var(--border2);
-  border-radius: var(--radius);
-  padding: 10px 14px;
-  font-size: 14px;
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  transition: border-color 0.2s;
-  outline: none;
-  -webkit-appearance: none;
-}
-.field input::placeholder,
-.field textarea::placeholder { color: var(--text3); }
-.field input:focus,
-.field select:focus,
-.field textarea:focus { border-color: var(--accent2); }
+.field input::placeholder, .field textarea::placeholder { color: var(--text3); }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent2); }
 .field select {
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b90a0' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  padding-right: 36px;
+  background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px;
 }
 .field select option { background: #1a1e28; color: var(--text); }
 .field textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
-
-/* Chip pills */
+.hint { font-size: 12px; color: var(--text3); margin-top: 4px; }
 .chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {
-  padding: 6px 14px;
-  font-size: 13px;
-  border: 1px solid var(--border2);
-  border-radius: 99px;
-  cursor: pointer;
-  background: transparent;
-  color: var(--text2);
-  font-family: 'DM Sans', sans-serif;
-  transition: all 0.15s;
-  user-select: none;
+  padding: 6px 14px; font-size: 13px; border: 1px solid var(--border2);
+  border-radius: 99px; cursor: pointer; background: transparent; color: var(--text2);
+  font-family: 'DM Sans', sans-serif; transition: all 0.15s; user-select: none;
 }
 .chip:hover { border-color: var(--accent2); color: var(--text); }
-.chip.active {
-  background: var(--accent-dim);
-  border-color: var(--accent2);
-  color: var(--accent);
-  font-weight: 500;
-}
-
-/* Checkboxes */
+.chip.active { background: var(--accent-dim); border-color: var(--accent2); color: var(--accent); font-weight: 500; }
 .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 @media (max-width: 500px) { .check-grid { grid-template-columns: 1fr; } }
 .check-label {
   display: flex; align-items: center; gap: 10px;
-  font-size: 13px; color: var(--text2);
-  cursor: pointer; padding: 10px 14px;
-  background: var(--bg); border: 1px solid var(--border);
-  border-radius: var(--radius);
-  transition: all 0.15s;
-  user-select: none;
+  font-size: 13px; color: var(--text2); cursor: pointer;
+  padding: 10px 14px; background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); transition: all 0.15s; user-select: none;
 }
 .check-label:hover { border-color: var(--border2); color: var(--text); }
 .check-label input[type=checkbox] { display: none; }
 .check-box {
   width: 16px; height: 16px; flex-shrink: 0;
-  border: 1px solid var(--border2);
-  border-radius: 4px; background: var(--bg3);
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.15s;
+  border: 1px solid var(--border2); border-radius: 4px; background: var(--bg3);
+  display: flex; align-items: center; justify-content: center; transition: all 0.15s;
 }
 .check-box svg { display: none; }
 .check-label.checked { border-color: rgba(110,231,183,0.3); color: var(--text); }
-.check-label.checked .check-box {
-  background: var(--accent); border-color: var(--accent);
-}
+.check-label.checked .check-box { background: var(--accent); border-color: var(--accent); }
 .check-label.checked .check-box svg { display: block; }
-
-/* Advanced toggle */
+.check-label-full { grid-column: 1 / -1; }
 .adv-toggle {
   display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13px; color: var(--text3);
-  cursor: pointer; background: none; border: none;
-  font-family: 'DM Sans', sans-serif;
-  padding: 10px 0; transition: color 0.15s;
+  font-size: 13px; color: var(--text3); cursor: pointer; background: none; border: none;
+  font-family: 'DM Sans', sans-serif; padding: 10px 0; transition: color 0.15s;
 }
 .adv-toggle:hover { color: var(--text2); }
 .adv-arrow { transition: transform 0.2s; display: inline-block; font-size: 10px; }
 .adv-arrow.open { transform: rotate(90deg); }
-
-/* Generate button */
 .btn-generate {
-  width: 100%;
-  padding: 16px 24px;
-  background: var(--accent);
-  color: #0d1a12;
-  border: none;
-  border-radius: var(--radius);
-  font-size: 15px;
-  font-weight: 600;
-  font-family: 'Syne', sans-serif;
-  letter-spacing: 0.01em;
-  cursor: pointer;
-  transition: all 0.2s;
-  margin-top: 24px;
+  width: 100%; padding: 16px 24px; background: var(--accent); color: #0d1a12;
+  border: none; border-radius: var(--radius); font-size: 15px; font-weight: 600;
+  font-family: 'Syne', sans-serif; letter-spacing: 0.01em; cursor: pointer;
+  transition: all 0.2s; margin-top: 24px;
   display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 .btn-generate:hover { background: var(--accent2); transform: translateY(-1px); }
 .btn-generate:active { transform: scale(0.99); }
-.btn-arrow { font-size: 18px; }
-
-/* Output */
-.output-panel {
-  margin-top: 32px;
-  border: 1px solid rgba(110,231,183,0.2);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: none;
-}
+.output-panel { margin-top: 32px; border: 1px solid rgba(110,231,183,0.2); border-radius: var(--radius-lg); overflow: hidden; display: none; }
 .output-panel.visible { display: block; }
 .output-header {
-  background: var(--accent-dim2);
-  border-bottom: 1px solid rgba(110,231,183,0.15);
-  padding: 14px 20px;
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 10px;
+  background: var(--accent-dim2); border-bottom: 1px solid rgba(110,231,183,0.15);
+  padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
 }
-.output-title {
-  font-size: 12px; font-weight: 500;
-  text-transform: uppercase; letter-spacing: 0.08em;
-  color: var(--accent);
-  display: flex; align-items: center; gap: 8px;
-}
-.output-title-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent);
-}
+.output-title { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+.output-title-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .btn-copy {
-  display: flex; align-items: center; gap: 6px;
-  padding: 7px 16px;
-  background: var(--accent-dim);
-  border: 1px solid rgba(110,231,183,0.3);
-  border-radius: 99px;
-  font-size: 12px; font-weight: 500;
-  color: var(--accent);
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  transition: all 0.15s;
+  display: flex; align-items: center; gap: 6px; padding: 7px 16px;
+  background: var(--accent-dim); border: 1px solid rgba(110,231,183,0.3);
+  border-radius: 99px; font-size: 12px; font-weight: 500; color: var(--accent);
+  cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s;
 }
-.btn-copy:hover { background: var(--accent); color: #0d1a12; }
-.btn-copy.copied { background: var(--accent); color: #0d1a12; }
-.output-body {
-  background: var(--bg);
-  padding: 24px 20px;
-  overflow-x: auto;
-}
+.btn-copy:hover, .btn-copy.copied { background: var(--accent); color: #0d1a12; }
+.output-body { background: var(--bg); padding: 24px 20px; overflow-x: auto; }
 .prompt-text {
-  font-family: 'DM Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: 12.5px;
-  color: var(--text2);
-  white-space: pre-wrap;
-  word-break: break-word;
-  line-height: 1.75;
+  font-family: 'Courier New', monospace; font-size: 12.5px; color: var(--text2);
+  white-space: pre-wrap; word-break: break-word; line-height: 1.75;
 }
-
-/* Divider */
-.divider {
-  height: 1px;
-  background: var(--border);
-  margin: 24px 0;
-}
-
-/* Info hint */
-.hint {
-  font-size: 12px;
-  color: var(--text3);
-  margin-top: 6px;
-}
-
-/* Footer */
-.site-footer {
-  margin-top: 60px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-}
-.site-footer p {
-  font-size: 12px;
-  color: var(--text3);
-  line-height: 1.7;
-}
-.site-footer a { color: var(--text2); text-decoration: none; }
-.site-footer a:hover { color: var(--accent); }
-
-/* Space between panels */
 .stack { display: flex; flex-direction: column; gap: 14px; }
-
-/* Scroll reveal */
+.site-footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+.site-footer p { font-size: 12px; color: var(--text3); line-height: 1.7; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 </style>
@@ -332,19 +166,18 @@ body {
 <body>
 <div class="page-wrap">
 
-  <!-- Header -->
   <header class="site-header reveal">
     <div class="badge"><span class="badge-dot"></span> Herramienta gratuita</div>
     <h1>Generador de <span>Master Prompt</span><br>para Anti-Gravity</h1>
     <p>Ingresa los datos del negocio, elige el estilo visual y obtén un system prompt profesional listo para pegar en Anti-Gravity. Sin tocar una sola línea de código.</p>
     <div class="tools-row">
-      <span class="tool-tag">⚡ <strong>Anti-Gravity</strong> IDE agéntica</span>
+      <span class="tool-tag">&#9889; <strong>Anti-Gravity</strong> IDE agéntica</span>
       <span class="tool-sep">+</span>
-      <span class="tool-tag">🍌 <strong>Nano Banana 2</strong> imágenes IA</span>
+      <span class="tool-tag">&#127820; <strong>Nano Banana 2</strong> imágenes IA</span>
     </div>
   </header>
 
-  <!-- PASO 1: Datos básicos -->
+  <!-- 01: Datos del negocio -->
   <div class="reveal">
     <div class="section-label">01 — Datos del negocio</div>
     <div class="panel">
@@ -358,15 +191,19 @@ body {
             <label>Tipo de negocio *</label>
             <select id="biz-type">
               <option value="">Selecciona el giro...</option>
-              <option value="restaurante">Restaurante / Cevichería</option>
-              <option value="salon">Salón de belleza / Spa</option>
-              <option value="clinica">Clínica / Consultorio médico</option>
+              <option value="restaurante">Restaurante</option>
+              <option value="salon">Salón de belleza</option>
+              <option value="spa">Spa</option>
+              <option value="clinica">Clínica</option>
+              <option value="consultorio">Consultorio médico</option>
               <option value="taller">Taller mecánico</option>
-              <option value="hostal">Hostal / Hotel boutique</option>
-              <option value="tienda">Tienda / Boutique</option>
-              <option value="gimnasio">Gimnasio / Centro fitness</option>
-              <option value="educacion">Centro educativo / Academia</option>
-              <option value="legal">Estudio jurídico / Notaría</option>
+              <option value="hostal">Hostal</option>
+              <option value="hotel">Hotel</option>
+              <option value="tienda">Tienda</option>
+              <option value="boutique">Boutique</option>
+              <option value="gimnasio">Gimnasio</option>
+              <option value="educacion">Centro educativo</option>
+              <option value="legal">Estudio jurídico</option>
               <option value="otro">Otro</option>
             </select>
           </div>
@@ -404,7 +241,7 @@ body {
     </div>
   </div>
 
-  <!-- PASO 2: Estilo visual -->
+  <!-- 02: Identidad visual -->
   <div class="reveal">
     <div class="section-label">02 — Identidad visual</div>
     <div class="panel">
@@ -447,67 +284,63 @@ body {
     </div>
   </div>
 
-  <!-- PASO 3: Secciones -->
+  <!-- 03: Secciones -->
   <div class="reveal">
     <div class="section-label">03 — Secciones del sitio</div>
     <div class="panel">
       <div class="check-grid" id="sections-grid">
         <label class="check-label checked" data-sec="hero">
           <input type="checkbox" checked>
-          <span class="check-box">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Hero con CTA
         </label>
         <label class="check-label checked" data-sec="services">
           <input type="checkbox" checked>
-          <span class="check-box">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Servicios / Menú
         </label>
         <label class="check-label checked" data-sec="gallery">
           <input type="checkbox" checked>
-          <span class="check-box">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Galería (Nano Banana 2)
         </label>
         <label class="check-label checked" data-sec="about">
           <input type="checkbox" checked>
-          <span class="check-box">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Sobre nosotros
         </label>
         <label class="check-label" data-sec="testimonials">
           <input type="checkbox">
-          <span class="check-box">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Testimonios
         </label>
         <label class="check-label checked" data-sec="hours">
           <input type="checkbox" checked>
-          <span class="check-box">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Horario de atención
         </label>
         <label class="check-label checked" data-sec="contact">
           <input type="checkbox" checked>
-          <span class="check-box">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Contacto + Mapa
         </label>
         <label class="check-label checked" data-sec="whatsapp">
           <input type="checkbox" checked>
-          <span class="check-box">
-            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           Botón flotante WhatsApp
         </label>
+        <label class="check-label check-label-full" data-sec="custom" id="check-custom">
+          <input type="checkbox" id="cb-custom">
+          <span class="check-box"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#0d1a12" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          + Agregar sección personalizada
+        </label>
+      </div>
+      <div id="custom-sec-wrap" style="display:none; margin-top:14px">
+        <div class="field">
+          <label>Describe la sección personalizada</label>
+          <textarea id="custom-sec-text" placeholder="Ej. Sección de preguntas frecuentes (FAQ) con 5 preguntas en estilo acordeón. También una sección de premios y reconocimientos del restaurante..."></textarea>
+          <span class="hint">Puedes describir una o más secciones adicionales aquí.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -515,12 +348,17 @@ body {
   <!-- Opciones avanzadas -->
   <div class="reveal">
     <button class="adv-toggle" id="adv-btn" onclick="toggleAdv()">
-      <span class="adv-arrow" id="adv-arrow">▶</span>
-      Opciones avanzadas (redes sociales, horarios, notas)
+      <span class="adv-arrow" id="adv-arrow">&#9658;</span>
+      Opciones avanzadas (web actual, redes sociales, horarios, notas)
     </button>
     <div id="adv-section" style="display:none; margin-top:8px">
       <div class="panel">
         <div class="stack">
+          <div class="field">
+            <label>Página web actual <span style="color:var(--text3)">(si ya tiene una)</span></label>
+            <input type="text" id="current-website" placeholder="https://www.negocio.com">
+            <span class="hint">El agente la tomará como referencia para conservar lo que funciona y mejorar lo que no.</span>
+          </div>
           <div class="grid2">
             <div class="field">
               <label>Instagram</label>
@@ -551,260 +389,261 @@ body {
   <!-- Generar -->
   <div class="reveal">
     <button class="btn-generate" onclick="generatePrompt()">
-      Generar system prompt <span class="btn-arrow">→</span>
+      Generar system prompt &#8594;
     </button>
   </div>
 
   <!-- Output -->
-  <div class="output-panel reveal" id="output-panel">
+  <div class="output-panel" id="output-panel">
     <div class="output-header">
       <div class="output-title">
         <span class="output-title-dot"></span>
         System prompt generado — listo para Anti-Gravity
       </div>
-      <button class="btn-copy" id="copy-btn" onclick="copyPrompt()">
-        Copiar prompt
-      </button>
+      <button class="btn-copy" id="copy-btn" onclick="copyPrompt()">Copiar prompt</button>
     </div>
     <div class="output-body">
       <pre class="prompt-text" id="prompt-output"></pre>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="site-footer reveal">
     <p>Herramienta creada para acompañar el tutorial en YouTube.<br>
     Usa <strong>Anti-Gravity</strong> + <strong>Nano Banana 2</strong> para construir sitios web sin tocar código.</p>
   </footer>
 
 </div>
-
 <script>
-/* ── chip selection ── */
-['style-group','cta-group'].forEach(id=>{
-  document.querySelectorAll('#'+id+' .chip').forEach(c=>{
-    c.onclick=()=>{
-      document.querySelectorAll('#'+id+' .chip').forEach(x=>x.classList.remove('active'));
+['style-group','cta-group'].forEach(function(id){
+  document.querySelectorAll('#'+id+' .chip').forEach(function(c){
+    c.onclick=function(){
+      document.querySelectorAll('#'+id+' .chip').forEach(function(x){x.classList.remove('active');});
       c.classList.add('active');
     };
   });
 });
 
-/* ── custom checkboxes ── */
-document.querySelectorAll('.check-label').forEach(label=>{
-  label.addEventListener('click',()=>{
-    const cb=label.querySelector('input[type=checkbox]');
+document.querySelectorAll('.check-label').forEach(function(label){
+  label.addEventListener('click',function(){
+    var cb=label.querySelector('input[type=checkbox]');
     cb.checked=!cb.checked;
     label.classList.toggle('checked',cb.checked);
+    if(label.id==='check-custom'){
+      document.getElementById('custom-sec-wrap').style.display=cb.checked?'block':'none';
+    }
   });
 });
 
-/* ── advanced toggle ── */
 function toggleAdv(){
-  const s=document.getElementById('adv-section');
-  const a=document.getElementById('adv-arrow');
-  const open=s.style.display==='none';
+  var s=document.getElementById('adv-section');
+  var a=document.getElementById('adv-arrow');
+  var open=s.style.display==='none';
   s.style.display=open?'block':'none';
   a.classList.toggle('open',open);
 }
 
-/* ── helpers ── */
-function v(id){return(document.getElementById(id)||{}).value?.trim()||'';}
-function isChecked(sec){return document.querySelector('[data-sec="'+sec+'"] input')?.checked;}
-function activeChip(gid){return document.querySelector('#'+gid+' .chip.active')?.dataset.val||'';}
+function v(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+function isChecked(sec){var el=document.querySelector('[data-sec="'+sec+'"] input');return el?el.checked:false;}
+function activeChip(gid){var el=document.querySelector('#'+gid+' .chip.active');return el?el.dataset.val:'';}
 
-/* ── section builder ── */
 function buildSections(){
-  const s=[];
-  if(isChecked('hero')) s.push('1. HERO: imagen de fondo a pantalla completa, headline impactante orientado a la emoción, subheadline, botón CTA principal muy prominente.');
-  if(isChecked('services')) s.push('2. SERVICIOS / MENÚ: cards en grid 3 col (desktop) / 1 col (mobile) con imagen [IMG-NANO-X], nombre, descripción y precio si aplica.');
-  if(isChecked('gallery')) s.push('3. GALERÍA: grid masonry con las imágenes generadas en Nano Banana 2 (placeholders [IMG-NANO-1] a [IMG-NANO-5]). Hover suave. Espaciado generoso.');
-  if(isChecked('about')) s.push('4. SOBRE NOSOTROS: texto a la izquierda, imagen [IMG-NANO-6] a la derecha. Tono cálido y humano. Incluir propuesta de valor única.');
-  if(isChecked('testimonials')) s.push('5. TESTIMONIOS: 3 cards con avatar genérico, nombre, estrellas y reseña breve. Grid de 3 col o carrusel.');
+  var s=[];
+  if(isChecked('hero')) s.push('1. HERO: imagen de fondo a pantalla completa, headline impactante, subheadline, botón CTA principal muy prominente en el color primario.');
+  if(isChecked('services')) s.push('2. SERVICIOS / MENU: cards en grid 3 col (desktop) / 1 col (mobile) con imagen [IMG-NANO-X], nombre, descripción y precio si aplica.');
+  if(isChecked('gallery')) s.push('3. GALERIA: grid masonry con imágenes de Nano Banana 2 (placeholders [IMG-NANO-1] a [IMG-NANO-5]). Hover suave. Espaciado generoso.');
+  if(isChecked('about')) s.push('4. SOBRE NOSOTROS: texto a la izquierda, imagen [IMG-NANO-6] a la derecha. Tono cálido y humano. Propuesta de valor única.');
+  if(isChecked('testimonials')) s.push('5. TESTIMONIOS: 3 cards con avatar, nombre, estrellas y reseña breve. Grid de 3 col o carrusel.');
   if(isChecked('hours')) s.push('6. HORARIO: tabla limpia con días y horarios. Ícono de reloj. Indicar si está abierto ahora.');
-  if(isChecked('contact')) s.push('7. CONTACTO: formulario simple (nombre, email, mensaje) a la izquierda. Google Maps embebido a la derecha. Teléfono, WhatsApp y email como íconos clickeables.');
-  if(isChecked('whatsapp')) s.push('8. WHATSAPP FLOTANTE: botón fijo esquina inferior derecha, color #25D366, animación de pulso. Abre chat con mensaje predefinido al hacer clic.');
+  if(isChecked('contact')) s.push('7. CONTACTO: formulario simple a la izquierda. Google Maps embebido a la derecha. Teléfono, WhatsApp y email como íconos clickeables.');
+  if(isChecked('whatsapp')) s.push('8. WHATSAPP FLOTANTE: botón fijo esquina inferior derecha, color #25D366, animación de pulso. Abre chat con mensaje predefinido.');
+  if(isChecked('custom')){
+    var custom=v('custom-sec-text');
+    if(custom) s.push('SECCION PERSONALIZADA: '+custom);
+  }
   return s.join('\n');
 }
 
-/* ── main generator ── */
 function generatePrompt(){
-  const name=v('biz-name')||'[Nombre del negocio]';
-  const type=v('biz-type')||'negocio local';
-  const tagline=v('tagline');
-  const phone=v('phone');
-  const wa=v('whatsapp');
-  const email=v('email');
-  const address=v('address');
-  const services=v('services');
-  const color1=v('color1')||'a definir según el giro del negocio';
-  const color2=v('color2');
-  const style=activeChip('style-group')||'moderno y limpio';
-  const cta=activeChip('cta-group')||'Contáctanos';
-  const ig=v('instagram');
-  const fb=v('facebook');
-  const tt=v('tiktok');
-  const hours=v('hours');
-  const notes=v('extra-notes');
-  const sections=buildSections();
+  var name=v('biz-name')||'[Nombre del negocio]';
+  var type=v('biz-type')||'negocio local';
+  var tagline=v('tagline');
+  var phone=v('phone');
+  var wa=v('whatsapp');
+  var email=v('email');
+  var address=v('address');
+  var services=v('services');
+  var color1=v('color1')||'a definir según el giro del negocio';
+  var color2=v('color2');
+  var style=activeChip('style-group')||'moderno y limpio';
+  var cta=activeChip('cta-group')||'Contactanos';
+  var website=v('current-website');
+  var ig=v('instagram');
+  var fb=v('facebook');
+  var tt=v('tiktok');
+  var hours=v('hours');
+  var notes=v('extra-notes');
+  var sections=buildSections();
+  var waNum=wa.replace(/[^0-9]/g,'');
 
-  const typeMap={restaurante:'restaurante / cevichería',salon:'salón de belleza y spa',clinica:'clínica / consultorio médico',taller:'taller mecánico automotriz',hostal:'hostal / hotel boutique',tienda:'tienda / boutique',gimnasio:'gimnasio y centro fitness',educacion:'centro educativo / academia',legal:'estudio jurídico / notaría',otro:'negocio local'};
-  const typeLabel=typeMap[type]||type;
+  var typeMap={restaurante:'Restaurante',salon:'Salón de belleza',spa:'Spa',clinica:'Clínica',consultorio:'Consultorio médico',taller:'Taller mecánico',hostal:'Hostal',hotel:'Hotel',tienda:'Tienda',boutique:'Boutique',gimnasio:'Gimnasio',educacion:'Centro educativo',legal:'Estudio jurídico',otro:'Negocio local'};
+  var typeLabel=typeMap[type]||type;
 
-  const waNum=wa.replace(/[^0-9]/g,'');
+  var lines=[];
+  lines.push('# SYSTEM PROMPT — AGENTE WEB ANTI-GRAVITY');
+  lines.push('# Proyecto: "'+name+'" — Sitio web profesional');
+  lines.push('');
+  lines.push('');
+  lines.push('## ROL');
+  lines.push('');
+  lines.push('Eres un agente de desarrollo web full-stack con especialización');
+  lines.push('en diseño UX/UI de nivel senior. Tu misión es construir, de forma');
+  lines.push('completamente autónoma, un sitio web de una sola página (SPA)');
+  lines.push('profesional, moderno y orientado a la conversión para este negocio.');
+  lines.push('');
+  lines.push('No pidas confirmación en cada paso.');
+  lines.push('Planifica -> ejecuta -> entrega el resultado final completo.');
+  lines.push('');
+  lines.push('');
+  lines.push('## DATOS DEL NEGOCIO');
+  lines.push('');
+  lines.push('Nombre:          '+name);
+  lines.push('Tipo:            '+typeLabel);
+  if(tagline) lines.push('Tagline:         '+tagline);
+  if(phone)   lines.push('Teléfono:        '+phone);
+  if(wa)      lines.push('WhatsApp:        '+wa);
+  if(email)   lines.push('Email:           '+email);
+  if(address) lines.push('Dirección:       '+address);
+  if(hours)   lines.push('Horario:         '+hours);
+  if(services)lines.push('Servicios:       '+services);
+  if(website) lines.push('Web actual:      '+website+' (tómala como referencia)');
+  if(ig)      lines.push('Instagram:       '+ig);
+  if(fb)      lines.push('Facebook:        '+fb);
+  if(tt)      lines.push('TikTok:          '+tt);
+  lines.push('');
+  lines.push('');
+  lines.push('## IDENTIDAD VISUAL');
+  lines.push('');
+  lines.push('Estilo:          '+style);
+  lines.push('Color primario:  '+color1);
+  if(color2) lines.push('Color secundario: '+color2);
+  lines.push('');
+  lines.push('Tipografía:');
+  lines.push('  - Headings: fuente con personalidad acorde al estilo "'+style+'"');
+  lines.push('              (Google Fonts — NO usar Inter, Roboto ni Arial)');
+  lines.push('  - Cuerpo:   DM Sans o similar — alta legibilidad');
+  lines.push('');
+  lines.push('Imágenes:');
+  lines.push('  Los placeholders están marcados como [IMG-NANO-1], [IMG-NANO-2],');
+  lines.push('  etc. Serán reemplazados por imágenes generadas con Nano Banana 2.');
+  lines.push('  Diseña el layout para que las imágenes sean el elemento visual');
+  lines.push('  dominante de cada sección.');
+  lines.push('');
+  lines.push('Espaciado:  Generoso. Padding y margin amplios. Sin comprimir.');
+  lines.push('Bordes:     Sutiles. border-radius redondeados, sombras suaves.');
+  lines.push('');
+  lines.push('');
+  lines.push('## CTA PRINCIPAL');
+  lines.push('');
+  lines.push('El call-to-action principal del sitio es: "'+cta+'"');
+  lines.push('');
+  lines.push('- Aparece en: navbar, hero, y sección de contacto (mínimo).');
+  lines.push('- Alta visibilidad y contraste respecto al fondo.');
+  if(waNum) lines.push('- Botón WhatsApp -> https://wa.me/'+waNum+' con mensaje predefinido.');
+  lines.push('');
+  lines.push('');
+  lines.push('## SECCIONES (en este orden)');
+  lines.push('');
+  lines.push(sections||'Hero, servicios, galería, sobre nosotros, contacto, footer.');
+  lines.push('');
+  lines.push('');
+  lines.push('## NAVBAR');
+  lines.push('');
+  lines.push('- Sticky con efecto blur al hacer scroll.');
+  lines.push('- Logo (izquierda): nombre del negocio estilizado si no hay imagen.');
+  lines.push('- Links (centro): anclan a cada sección con scroll suave.');
+  lines.push('- Botón "'+cta+'" (derecha): color primario, alta visibilidad.');
+  lines.push('- Mobile: menú hamburguesa con animación de apertura suave.');
+  lines.push('');
+  lines.push('## FOOTER');
+  lines.push('');
+  lines.push('- Tres columnas: logo + desc breve | links rápidos | contacto.');
+  lines.push('- Íconos de redes sociales si aplica.');
+  lines.push('- Copyright con año actual.');
+  lines.push('- Fondo en tono oscuro del color primario.');
+  lines.push('');
+  lines.push('');
+  lines.push('## ESTÁNDARES TÉCNICOS Y UX');
+  lines.push('');
+  lines.push('Rendimiento:');
+  lines.push('  - Imágenes con lazy loading nativo (loading="lazy")');
+  lines.push('  - Fuentes con font-display: swap');
+  lines.push('  - CSS crítico inline para above-the-fold');
+  lines.push('');
+  lines.push('Accesibilidad:');
+  lines.push('  - Estados :focus visibles en todos los elementos interactivos');
+  lines.push('  - Atributos alt descriptivos en todas las imágenes');
+  lines.push('  - Contraste mínimo 4.5:1 para texto');
+  lines.push('  - Estructura semántica: <header> <main> <section> <footer> <nav>');
+  lines.push('');
+  lines.push('Responsive (mobile-first):');
+  lines.push('  - Breakpoints: 375px · 768px · 1280px');
+  lines.push('  - Sin scroll horizontal en ningún breakpoint');
+  lines.push('  - Tipografía fluida con clamp()');
+  lines.push('');
+  lines.push('Animaciones:');
+  lines.push('  - Scroll reveal con Intersection Observer API (sin librerías)');
+  lines.push('  - Transiciones CSS 200-300ms en hover de botones, cards y links');
+  lines.push('');
+  lines.push('SEO básico:');
+  lines.push('  - Meta title y description con nombre del negocio y ciudad');
+  lines.push('  - Open Graph tags para compartir en redes');
+  lines.push('  - Schema.org LocalBusiness en JSON-LD');
+  lines.push('');
+  lines.push('');
+  lines.push('## ORDEN DE EJECUCIÓN');
+  lines.push('');
+  lines.push('1. index.html — estructura HTML semántica completa');
+  lines.push('2. styles.css  — variables CSS, estilos base, componentes');
+  lines.push('3. main.js     — scroll reveal, navbar sticky, menú mobile, WhatsApp');
+  lines.push('4. Verificar que todos los links del navbar anclen correctamente');
+  lines.push('5. Verificar botón WhatsApp flotante en mobile');
+  lines.push('6. Revisar coherencia visual en 375px y 1280px');
+  if(notes){
+    lines.push('');
+    lines.push('');
+    lines.push('## CONTEXTO ADICIONAL');
+    lines.push('');
+    lines.push(notes);
+  }
+  lines.push('');
+  lines.push('');
+  lines.push('Entrega el sitio completo, funcional y listo para desplegar');
+  lines.push('en Vercel o Netlify con un solo comando.');
 
-  const prompt=
-`# SYSTEM PROMPT — AGENTE WEB ANTI-GRAVITY
-# Proyecto: "${name}" — Sitio web profesional
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## ROL
-
-Eres un agente de desarrollo web full-stack con especialización
-en diseño UX/UI de nivel senior. Tu misión es construir, de forma
-completamente autónoma, un sitio web de una sola página (SPA)
-profesional, moderno y orientado a la conversión para este negocio.
-
-No pidas confirmación en cada paso.
-Planifica → ejecuta → entrega el resultado final completo.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## DATOS DEL NEGOCIO
-
-Nombre:          ${name}
-Tipo:            ${typeLabel}${tagline?'\nTagline:         '+tagline:''}${phone?'\nTeléfono:        '+phone:''}${wa?'\nWhatsApp:        '+wa:''}${email?'\nEmail:           '+email:''}${address?'\nDirección:       '+address:''}${hours?'\nHorario:         '+hours:''}${services?'\nServicios:       '+services:''}${ig?'\nInstagram:       '+ig:''}${fb?'\nFacebook:        '+fb:''}${tt?'\nTikTok:          '+tt:''}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## IDENTIDAD VISUAL
-
-Estilo:          ${style}
-Color primario:  ${color1}${color2?'\nColor secundario: '+color2:''}
-
-Tipografía:
-  - Headings:  fuente con personalidad acorde al estilo "${style}"
-               (de Google Fonts — NO usar Inter, Roboto ni Arial)
-  - Cuerpo:    DM Sans o similar — alta legibilidad
-
-Imágenes:
-  Los placeholders están marcados como [IMG-NANO-1], [IMG-NANO-2],
-  etc. Serán reemplazados por imágenes generadas con Nano Banana 2.
-  Diseña el layout para que las imágenes sean el elemento visual
-  dominante de cada sección.
-
-Espaciado:   Generoso. Padding y margin amplios. Sin comprimir.
-Bordes:      Sutiles. border-radius redondeados, sombras suaves.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## CTA PRINCIPAL
-
-El call-to-action de todo el sitio es: "${cta}"
-
-- Aparece en: navbar, hero, y sección de contacto (mínimo).
-- Alta visibilidad y contraste respecto al fondo.${waNum?'\n- Botón WhatsApp → https://wa.me/'+waNum+' con mensaje predefinido.':''}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## SECCIONES (en este orden)
-
-${sections||'Hero, servicios, galería, sobre nosotros, contacto, footer.'}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## NAVBAR
-
-- Sticky con efecto blur al hacer scroll.
-- Logo (izquierda): nombre del negocio estilizado si no hay imagen.
-- Links (centro): anclan a cada sección con scroll suave.
-- Botón "${cta}" (derecha): color primario, alta visibilidad.
-- Mobile: menú hamburguesa con animación de apertura suave.
-
-## FOOTER
-
-- Tres columnas: logo + desc breve | links rápidos | contacto.
-- Íconos de redes sociales si aplica.
-- Copyright con año actual.
-- Fondo en tono oscuro del color primario.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## ESTÁNDARES TÉCNICOS Y UX
-
-Rendimiento:
-  - Imágenes con lazy loading nativo (loading="lazy")
-  - Fuentes con font-display: swap
-  - CSS crítico inline para above-the-fold
-
-Accesibilidad:
-  - Estados :focus visibles en todos los elementos interactivos
-  - Atributos alt descriptivos en todas las imágenes
-  - Contraste mínimo 4.5:1 para texto
-  - Estructura semántica: <header> <main> <section> <footer> <nav>
-
-Responsive (mobile-first):
-  - Breakpoints: 375px · 768px · 1280px
-  - Sin scroll horizontal en ningún breakpoint
-  - Tipografía fluida con clamp()
-
-Animaciones:
-  - Scroll reveal con Intersection Observer API (sin librerías)
-  - Transiciones CSS 200–300ms en hover de botones, cards y links
-  - Sin animaciones que distraigan o afecten el rendimiento
-
-SEO básico:
-  - Meta title y description con nombre del negocio y ciudad
-  - Open Graph tags para compartir en redes
-  - Schema.org LocalBusiness en JSON-LD
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-## ORDEN DE EJECUCIÓN
-
-1. index.html — estructura HTML semántica completa
-2. styles.css  — variables CSS, estilos base, componentes
-3. main.js     — scroll reveal, navbar sticky, menú mobile, WhatsApp
-4. Verificar que todos los links del navbar anclen correctamente
-5. Verificar botón WhatsApp flotante en mobile
-6. Revisar coherencia visual en 375px y 1280px${notes?'\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n## CONTEXTO ADICIONAL\n\n'+notes:''}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Entrega el sitio completo, funcional y listo para desplegar
-en Vercel o Netlify con un solo comando.`;
-
-  document.getElementById('prompt-output').textContent=prompt;
-  const panel=document.getElementById('output-panel');
+  document.getElementById('prompt-output').textContent=lines.join('\n');
+  var panel=document.getElementById('output-panel');
   panel.classList.add('visible');
-  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}),120);
+  setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'start'});},120);
 }
 
-/* ── copy ── */
 function copyPrompt(){
-  const text=document.getElementById('prompt-output').textContent;
-  navigator.clipboard.writeText(text).then(()=>{
-    const btn=document.getElementById('copy-btn');
-    btn.textContent='¡Copiado!';
-    btn.classList.add('copied');
-    setTimeout(()=>{btn.textContent='Copiar prompt';btn.classList.remove('copied');},2200);
-  }).catch(()=>{
-    const ta=document.createElement('textarea');
-    ta.value=text; ta.style.position='fixed'; ta.style.opacity='0';
-    document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); document.body.removeChild(ta);
-    const btn=document.getElementById('copy-btn');
-    btn.textContent='¡Copiado!'; btn.classList.add('copied');
-    setTimeout(()=>{btn.textContent='Copiar prompt';btn.classList.remove('copied');},2200);
-  });
+  var text=document.getElementById('prompt-output').textContent;
+  var btn=document.getElementById('copy-btn');
+  function done(){btn.textContent='¡Copiado!';btn.classList.add('copied');setTimeout(function(){btn.textContent='Copiar prompt';btn.classList.remove('copied');},2200);}
+  if(navigator.clipboard){navigator.clipboard.writeText(text).then(done).catch(function(){fallback(text,done);});}
+  else{fallback(text,done);}
+}
+function fallback(text,cb){
+  var ta=document.createElement('textarea');
+  ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();document.execCommand('copy');
+  document.body.removeChild(ta);cb();
 }
 
-/* ── scroll reveal ── */
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el);});
 </script>
 </body>
 </html>
